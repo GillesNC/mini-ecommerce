@@ -2,7 +2,7 @@
     require $_SERVER["DOCUMENT_ROOT"].'/mini-ecommerce/model/user.php';
 
     if (isset($_POST["login"])) {
-    //APPEL DE LA FONCTION CREATE DEPUIS LE FICHIER USER.PHP
+    // var_dump($_POST);
         switch (true) {
             case (!checkEmailExist($_POST["email"])):
                 echo'<div class="alert alert-warning" role="alert">Email Inconnu</div>';

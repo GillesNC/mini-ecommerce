@@ -31,12 +31,29 @@
                     <a href="#" class="cart"><i class="fa-solid fa-basket-shopping"></i>Mon panier</a>
                 </div>                
                 <div class="account_dropdown">
-                    <a href="?route=login" class="user"><i class="fa-solid fa-user"></i>Mon Compte</a><i class="fa-solid fa-chevron-down"></i>
+                <!-- CONDITION CONNEXION OU NON -->
+
+                <?php
+                    if (!isset($_SESSION['user'])) {
+                        session_start();
+                    }
+
+                    if (isset($_SESSION['user'])) {
+                        echo '<a href="?route=profil"><i class="fa-regular fa-face-smile"></i></i>'."Bonjour ".$_SESSION['user']['prenom'].'</a>';
+                        echo '<i class="fa-solid fa-chevron-down"></i>';
+                        echo '<div class="dropdown_content">';
+                        echo '<a href="?route=logout">Déconnexion</a>';
+                    } else {
+                        echo '<a href="?route=login"><i class="fa-regular fa-user"></i>Mon Compte</a>';
+                    }
+                ?>
+
+                    <!-- <a href="?route=login" class="user"><i class="fa-solid fa-user"></i>Mon Compte</a><i class="fa-solid fa-chevron-down"></i>
                     <div class="dropdown_content">
-                        <a href="#">Mon profil</a>
+                        <a href="?route=profil">Mon profil</a>
                         <a href="?route=register">M'inscrire</a>
                         <a href="#">Déconnexion</a>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </section>

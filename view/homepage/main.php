@@ -10,7 +10,6 @@ echo "Welcome to Mini E-commerce";
         <div class="product_list">
 
         </div>
-
     </section>
 
     <section class="about">

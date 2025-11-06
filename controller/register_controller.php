@@ -3,7 +3,6 @@
 
     if (isset($_POST["register"])) {
     // var_dump($_POST);
-    //APPEL DE LA FONCTION CREATE DEPUIS LE FICHIER USER.PHP
         switch (true) {
             case (checkEmailExist($_POST["email"])):
                 echo'<div>Attention, Email existant</div>';

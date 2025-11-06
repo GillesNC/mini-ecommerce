@@ -111,6 +111,7 @@ header {
     right: 5px;
     width: 95%;
     background-color: #0081A7;
+    border: 1px solid #fff;
     box-shadow: 0 2px 4px #0000001a;
     border-radius: 5px;
     overflow: hidden;
@@ -122,7 +123,6 @@ header {
 }
 
 .account_dropdown .dropdown_content a {
-    display: block;
     padding: 10px 15px;
     color: #fff;
     text-decoration: none;
