@@ -1,0 +1,97 @@
+/****** FOOTER STYLE *******/
+footer {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/****** REASSURANCE SECTION *******/
+.reassurance {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px;
+    background-color: #0081A7;
+    width: 90%;
+    border-radius: 25px;
+}
+
+.reassurance_item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 15px;
+    font-size: 26px;
+    color: #fff;
+}
+
+/****** MENU SECTION *******/
+.menu {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 30px 0;
+}
+
+.logo_footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo_footer img {
+    height: 150px;
+}
+
+.social_media i {
+    font-size: 20px;
+    margin: 0 5px;
+}
+
+.nav {
+    display: flex;
+    gap: 150px;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.nav_section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.nav_section h3 {
+    color: #0081A7;
+}
+
+.nav_section ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.nav_section ul li a {
+    color: #222222;
+}
+
+
+/****** LEGACY SECTION *******/
+.legacy {
+    border-top: 1px solid #ccc;
+    background-color: #0081A7;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+}
+
+.legacy div {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+}

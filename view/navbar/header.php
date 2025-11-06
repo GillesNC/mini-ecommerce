@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.png">
+
+    <!-- LINK CSS STYLE -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+
+    <title>ECF - Mini Ecommerce</title>
+</head>
+<body>
+    <header>
+        <section class="top_header">
+            <div class="logo">
+                <a href="index.php"><img src="assets/logo.svg" alt="Logo Mini Ecommerce"></a>
+            </div>
+            <div class="search_bar">
+                <input type="text" placeholder="Rechercher votre produit...">
+                <button><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+            <div class="cart_account">
+                <div class="cart">
+                    <a href="#" class="cart"><i class="fa-solid fa-basket-shopping"></i>Mon panier</a>
+                </div>                
+                <div class="account_dropdown">
+                    <a href="#" class="user"><i class="fa-solid fa-user"></i>Mon Compte</a><i class="fa-solid fa-chevron-down"></i>
+                    <div class="dropdown_content">
+                        <a href="#">Mon profil</a>
+                        <a href="#">M'inscrire</a>
+                        <a href="#">Déconnexion</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="main_navbar">
+            <nav>
+                <ul>
+                    <li><a href="#">Produits</a></li>
+                    <li><a href="#">Qui sommes nous ?</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </section>
+    </header>
+
+    

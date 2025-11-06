@@ -1,0 +1,146 @@
+/****** HEADER STYLE *******/
+header {
+    box-shadow: 0 2px 4px #0000001a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: sticky;
+}
+
+/****** TOP HEADER *******/
+.top_header {
+    padding: 20px  0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+}
+
+.top_header .logo img{
+    height: 80px;
+}
+
+.search_bar {
+    flex: 1;
+    margin: 0 20px;
+    position: relative;
+}
+
+.search_bar input {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    background-color: #E5E5E5;
+    border-radius: 100px;
+    font-size: 16px;
+}
+
+.search_bar button {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: #0081A7;
+    padding: 5px;
+}
+
+.cart_account {
+    display: flex;
+    gap: 20px;
+}
+
+.cart_account .cart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cart_account .cart i {
+    font-size: 24px;
+    color: #0081A7;
+}
+
+.cart_account .cart a {
+    color: #222222;
+    text-decoration: none;
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+.account_dropdown {
+    position: relative;
+    cursor: pointer;
+    background-color: #0081A7;
+        color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 15px;
+    border-radius: 100px;
+}
+
+.account_dropdown a {
+    color: #fff;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.account_dropdown .dropdown_content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #fff;
+    box-shadow: 0 2px 4px #0000001a;
+    border-radius: 5px;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.account_dropdown:hover .dropdown_content {
+    display: block;
+}
+
+.account_dropdown .dropdown_content a {
+    display: block;
+    padding: 10px 15px;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+/****** NAVBAR *******/
+
+.main_navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0;
+    background-color: #0081A7;
+    width: 100%;
+}
+
+.main_navbar nav {
+    width: 90%;
+}
+
+.main_navbar ul {
+    display: flex;
+    gap: 30px;
+    width: 90%;
+}
+
+.main_navbar ul li a {
+    color: #fff;
+    font-weight: 500;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
