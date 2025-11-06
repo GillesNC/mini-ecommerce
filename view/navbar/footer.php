@@ -30,9 +30,9 @@
             <div class="nav_section">
                 <h3>Tous nos produits</h3>
                 <ul>
-                    <li><a href="#">Nouveautés</a></li>
-                    <li><a href="#">Meilleures ventes</a></li>
-                    <li><a href="#">Promotions</a></li>
+                    <li><a href="#">Produit A</a></li>
+                    <li><a href="#">Produit B</a></li>
+                    <li><a href="#">Produit C</a></li>
                 </ul>
             </div>
             <div class="nav_section">

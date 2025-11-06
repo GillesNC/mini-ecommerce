@@ -1,0 +1,44 @@
+<?php
+//-- APPEL A LA BDD --//
+require $_SERVER["DOCUMENT_ROOT"].'/mini-ecommerce/model/connexiondb.php';
+
+//-- CRUD USER --//
+    function createdb($nom, $prenom, $pseudo, $email, $pwd): bool {
+        $db = connexionToDB();
+
+        $sql = $db->prepare("
+            INSERT INTO USER (nom, prenom, pseudo, email, pwd) VALUES (:nom, :prenom, :pseudo, :email, :pwd)
+        ");
+
+        $sql->bindValue(":nom", $nom);
+        $sql->bindValue(":prenom", $prenom);
+        $sql->bindValue(":pseudo", $pseudo);
+        $sql->bindValue(":email", $email);
+        $sql->bindValue(":pwd", password_hash($pwd, PASSWORD_DEFAULT));
+        $sql->execute();
+
+        if ($sql->rowCount() > 0) {
+            return true;
+        } else {
+            return false;
+        }   
+    }
+
+//-- VERIF EMAIL --//
+    function checkEmailExist($email_verif) :bool {
+        $db = connexionToDB();
+
+        $sql = $db->prepare("
+            SELECT email FROM user WHERE email = :email
+        ");
+
+        $sql->bindValue(":email", $email_verif);
+        $sql->execute();
+
+        if ($sql->rowCount() > 0) {
+            return true;
+        } else {
+            return false;
+        }        
+    }
+?>

@@ -18,10 +18,12 @@ body {
     background-color: #0081A7;
     color: #fff;
     border: none;
-    padding: 10px 15px;
-    border-radius: 100%;
+    padding: 10px 25px;
+    border-radius: 50px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    font-size: 16px;
+    font-weight: 500;
 }
 
 .btn1:hover {
@@ -33,9 +35,11 @@ body {
     color: #fff;
     border: none;
     padding: 10px 15px;
-    border-radius: 100%;
+    border-radius: 100px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    font-size: 16px;
+    font-weight: 500;    
 }
 
 .btn2:hover {
@@ -50,4 +54,14 @@ a {
 
 ul {
     list-style: none;
+}
+
+h1 {
+    font-size: 54px;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 38px;
+    text-transform: uppercase;
 }

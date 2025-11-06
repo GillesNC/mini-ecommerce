@@ -1,0 +1,50 @@
+/****** FORMULAIRE STYLE *******/
+.form_subscribe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 0;
+}
+
+.form_subscribe div h1 {
+    color: #0081A7;
+}
+
+.container_form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    width: 70%;
+}
+
+.bloc_form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+label {
+    font-size: 18px;
+    font-weight: 500;
+    color: #EEA08F;
+}
+
+input {
+    padding: 10px;
+    border: 2px solid #0081A7;
+    border-radius: 100px;
+    font-size: 16px;
+}
+
+input:focus {
+    outline: none;
+    border-color: #EEA08F;
+    box-shadow: 0 0 5px rgba(238, 160, 143, 0.5);
+}
+
+form button {
+    align-self: center;
+    width: 200px;
+}

@@ -34,7 +34,7 @@
                     <a href="#" class="user"><i class="fa-solid fa-user"></i>Mon Compte</a><i class="fa-solid fa-chevron-down"></i>
                     <div class="dropdown_content">
                         <a href="#">Mon profil</a>
-                        <a href="#">M'inscrire</a>
+                        <a href="?route=register">M'inscrire</a>
                         <a href="#">Déconnexion</a>
                     </div>
                 </div>
