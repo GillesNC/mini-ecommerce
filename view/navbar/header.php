@@ -31,7 +31,7 @@
                     <a href="#" class="cart"><i class="fa-solid fa-basket-shopping"></i>Mon panier</a>
                 </div>                
                 <div class="account_dropdown">
-                    <a href="#" class="user"><i class="fa-solid fa-user"></i>Mon Compte</a><i class="fa-solid fa-chevron-down"></i>
+                    <a href="?route=login" class="user"><i class="fa-solid fa-user"></i>Mon Compte</a><i class="fa-solid fa-chevron-down"></i>
                     <div class="dropdown_content">
                         <a href="#">Mon profil</a>
                         <a href="?route=register">M'inscrire</a>
@@ -43,7 +43,7 @@
         <section class="main_navbar">
             <nav>
                 <ul>
-                    <li><a href="#">Produits</a></li>
+                    <li><a href="#">Tous nos produits</a></li>
                     <li><a href="#">Qui sommes nous ?</a></li>
                     <li><a href="#">Contact</a></li>
                 </ul>

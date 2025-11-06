@@ -6,7 +6,7 @@
     //APPEL DE LA FONCTION CREATE DEPUIS LE FICHIER USER.PHP
         switch (true) {
             case (checkEmailExist($_POST["email"])):
-                echo'<div class="alert alert-warning" role="alert">Attention, Email existant</div>';
+                echo'<div>Attention, Email existant</div>';
                 break;
 
             case createdb($_POST["nom"], $_POST["prenom"], $_POST["pseudo"], $_POST["email"], $_POST["pwd"]):
@@ -14,7 +14,7 @@
                 break;
             
             default:
-                echo'<div class="alert alert-danger" role="alert">Recommence car tu es mauvais !</div>';
+                header("Location: ?route=register");
                 break;
         }
     }else {

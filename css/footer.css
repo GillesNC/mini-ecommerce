@@ -77,6 +77,10 @@ footer {
     color: #222222;
 }
 
+.nav_section ul li a:hover {
+    color: #EEA08F;
+}
+
 
 /****** LEGACY SECTION *******/
 .legacy {

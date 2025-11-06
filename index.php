@@ -13,6 +13,10 @@ require $_SERVER["DOCUMENT_ROOT"].'/mini-ecommerce/view/navbar/header.php';
                 require $_SERVER["DOCUMENT_ROOT"].'/mini-ecommerce/view/user/welcome.php';
                 break;
 
+            case $_GET["route"] === "login":
+                require "./controller/login_controller.php";
+                break;
+
             default:
                 echo "Page 404";
                 break;

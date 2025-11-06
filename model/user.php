@@ -41,4 +41,25 @@ require $_SERVER["DOCUMENT_ROOT"].'/mini-ecommerce/model/connexiondb.php';
             return false;
         }        
     }
+
+//-- FONCTION LOGIN USER --//
+    function loginDB($email, $pwd) : bool {
+        $db = connexionToDB();
+
+        $sql = $db->prepare("
+            SELECT * FROM user WHERE email = :email
+        ");
+
+        $sql->bindValue(":email", $email); 
+        $sql->execute();
+
+        $req = $sql->fetch();
+        
+        if (password_verify($pwd, $req["pwd"])) {
+            $_SESSION['user']= $req;               
+            return true;
+        } else {
+            return false;
+        }
+    }
 ?>
