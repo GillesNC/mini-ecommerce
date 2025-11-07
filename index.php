@@ -25,6 +25,14 @@ require $_SERVER["DOCUMENT_ROOT"].'/mini-ecommerce/view/navbar/header.php';
                 require "./controller/logout_controller.php";
                 break;
 
+            case $_GET["route"] === "updateUser":
+                require "./controller/updateUser_controller.php";
+                break;
+
+            case $_GET["route"] === "deleteUser":
+                require "./controller/deleteUser_controller.php";
+                break;
+
             default:
                 echo "Page 404";
                 break;

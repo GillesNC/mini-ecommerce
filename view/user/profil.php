@@ -2,42 +2,53 @@
     switch (true) {
         case (isset($_SESSION["user"])):
             $user = $_SESSION["user"];
-            var_dump($_SESSION["user"]);
-            die("oK");
+            // var_dump($_SESSION["user"]);
+            // die("oK");
             break;
 
         default:
             echo "Vous n'êtes pas connecté !";
+            header("Location: ?route=login");
             break;
     }
 ?>
 
-<!-- <div class="text-center">
-  <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=200" class="rounded img-thumbnail" alt="profil">
-
-    <div class="info">
-        <p>
-            <?php
-            echo'Votre nom : '.$_SESSION['user']['nom'];
-            ?>
-        </p>
-
-            <p>
-            <?php
-            echo'Votre prenom : '.$_SESSION['user']['prenom'];
-            ?>
-        </p>
-        </p>
-
-            <p>
-            <?php
-            echo'Votre email : '.$_SESSION['user']['email'];
-            ?>
-        </p><hr>
-        <?php
-            echo '<a href="?route=editUser" class="btn btn-warning"> Modifier mes infos</a></div>';
-            echo '<a href="?route=deleteUser" class="btn btn-outline-warning"> Supprimer mon profil</a></div>';
-        ?>
+<section class="profil">
+    <div>
+        <h1>Mon profil</h1>
     </div>
-
-</div> -->
+    <div class="content_profil">
+        <h2>Salut <?php echo $user['prenom']. ","; ?></h2>
+        <p>Auxerunt haec vulgi sordidioris audaciam, quod cum ingravesceret penuria commeatuum, famis et furoris inpulsu Eubuli cuiusdam inter suos clari domum ambitiosam ignibus subditis inflammavit.</p>
+    </div>
+    <div class="info_profil">
+        <div class="details_profil">
+            <h3>Mes informations</h3>
+            <p><strong>Nom :</strong> <?php echo $user['nom']; ?></p>
+            <p><strong>Prénom :</strong> <?php echo $user['prenom']; ?></p>
+            <p><strong>Pseudo :</strong> <?php echo $user['pseudo']; ?></p>
+            <p><strong>Email :</strong> <?php echo $user['email']; ?></p>
+            <div class="buttons_profil">
+                <a href="?route=updateUser"><button class="btn1">Modifier son profil</button></a>
+                <a href="#popup"><button class="btn2">Supprimer son profil</button></a>
+            </div>
+        </div>
+        <div class="img_profil">
+            <img src="/mini-ecommerce/assets/profil.jpg" alt="Image profil utilisateur">
+        </div>
+    </div>
+ <div class="popup" id="popup">
+        <div class="popup_content">
+            <div>
+                <h2>Confirmer la suppression</h2>
+                <p>Êtes-vous sûr de vouloir supprimer votre profil ? Cette action est irréversible.</p>
+            </div>
+            <div class="buttons_popup">
+                <form method="POST" action="?route=deleteUser">
+                    <button class="btn1" type="submit" name="delete">Oui, supprimer mon profil</button>
+                </form>
+                <a href="#"><button class="btn2">Annuler</button></a>
+            </div>
+        </form>
+    </div>
+</section>

@@ -1,5 +1,3 @@
-<link rel="stylesheet" href="/mini-ecommerce/css/main.css">
-
 <?php
 echo "Welcome to Mini E-commerce";
 ?>

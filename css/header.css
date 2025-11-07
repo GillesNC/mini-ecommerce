@@ -96,6 +96,10 @@ header {
     border-radius: 100px;
 }
 
+.account_dropdown:hover {
+    background-color: #EEA08F;
+}
+
 .account_dropdown a {
     color: #fff;
     font-size: 16px;

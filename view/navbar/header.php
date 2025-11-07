@@ -8,11 +8,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="assets/favicon.png">
-
+    
     <!-- LINK CSS STYLE -->
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="/mini-ecommerce/css/register.css">
+    <link rel="stylesheet" href="css/welcome.css">
+    <link rel="stylesheet" href="/mini-ecommerce/css/hero.css">
+    <link rel="stylesheet" href="/mini-ecommerce/css/main.css">
+    <link rel="stylesheet" href="/mini-ecommerce/css/profil.css">
+    <link rel="stylesheet" href="/mini-ecommerce/css/modal.css">
 
     <title>ECF - Mini Ecommerce</title>
 </head>
@@ -42,18 +48,16 @@
                         echo '<a href="?route=profil"><i class="fa-regular fa-face-smile"></i></i>'."Bonjour ".$_SESSION['user']['prenom'].'</a>';
                         echo '<i class="fa-solid fa-chevron-down"></i>';
                         echo '<div class="dropdown_content">';
+                        echo '<a href="?route=updateUser">Modifier mon profil</a>';
                         echo '<a href="?route=logout">Déconnexion</a>';
                     } else {
                         echo '<a href="?route=login"><i class="fa-regular fa-user"></i>Mon Compte</a>';
+                        echo '<i class="fa-solid fa-chevron-down"></i>';
+                        echo '<div class="dropdown_content">';
+                        echo '<a href="?route=register">S\'inscrire</a>';
                     }
                 ?>
 
-                    <!-- <a href="?route=login" class="user"><i class="fa-solid fa-user"></i>Mon Compte</a><i class="fa-solid fa-chevron-down"></i>
-                    <div class="dropdown_content">
-                        <a href="?route=profil">Mon profil</a>
-                        <a href="?route=register">M'inscrire</a>
-                        <a href="#">Déconnexion</a>
-                    </div> -->
                 </div>
             </div>
         </section>

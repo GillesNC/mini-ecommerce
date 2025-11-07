@@ -1,5 +1,3 @@
-<link rel="stylesheet" href="/mini-ecommerce/css/hero.css">
-
 <section class="hero">
     <div class="hero_img">
         <img src="/mini-ecommerce/assets/hero_img.webp" alt="Hero Image">

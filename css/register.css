@@ -7,6 +7,10 @@
     padding: 100px 0;
 }
 
+.update_user {
+    padding: 0;
+}
+
 .form_subscribe div h1 {
     color: #0081A7;
 }
@@ -46,5 +50,5 @@ input:focus {
 
 form button {
     align-self: center;
-    width: 200px;
+    width: 300px;
 }

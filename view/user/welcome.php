@@ -1,5 +1,3 @@
-<link rel="stylesheet" href="css/welcome.css">
-
 <section class="welcome">
     <h1>Merci pour votre inscription</h1>
     <p>Bienvenue dans notre communauté ! Nous sommes ravis de vous compter parmi nos membres.</p>
