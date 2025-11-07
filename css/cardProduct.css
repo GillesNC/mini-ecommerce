@@ -60,6 +60,11 @@
     width: 100%;
 }
 
+.price {
+    font-size: 25px;
+    font-weight: 600;
+}
+
 .cardProduct_Button {
     display: flex;
     align-items: center;
@@ -75,9 +80,4 @@
 
 .fa-circle-plus:hover {
     color: #EEA08F;
-}
-
-.cardProduct_Content span {
-    font-size: 25px;
-    font-weight: 600;
 }

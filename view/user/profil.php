@@ -31,6 +31,7 @@
             <div class="buttons_profil">
                 <a href="?route=updateUser"><button class="btn1">Modifier son profil</button></a>
                 <a href="?route=addProduct"><button class="btn1">Ajouter un produit</button></a>
+                <a href="?route=seller"><button class="btn1">Voir tous mes produits</button></a>
                 <a href="#popup"><button class="btn3">Supprimer mon profil</button></a>
             </div>
         </div>

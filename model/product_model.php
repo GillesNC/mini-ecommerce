@@ -36,4 +36,36 @@ function addProduct($nom, $description, $price, $image, $vendeur): bool {
         $sql->execute();
         return $sql->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    //-- AFFICHER UN PRODUIT DE TABLE PRODUCT SUR UNE FICHE PRODUIT --//
+    // function displayProduct($id, $nomProduct, $description, $prix, $image, $nom) {
+    //     $db = connexionToDB();
+
+    //     $sql = $db->prepare("
+    //         SELECT *, USER.nom as nomVendeur FROM PRODUCT JOIN USER ON PRODUCT.vendeur = USER.id AND PRODUCT.id = :id AND PRODUCT.nomProduct = :nomProduct AND PRODUCT.description = :description AND PRODUCT.prix = :prix AND PRODUCT.image = :image AND USER.nom = :nom
+    //     ");
+
+    //     $sql->bindValue(":id", $id);
+    //     $sql->bindValue(":nomProduct", $nomProduct);
+    //     $sql->bindValue(":description", $description);
+    //     $sql->bindValue(":prix", $prix);
+    //     $sql->bindValue(":image", $image);
+    //     $sql->bindValue(":nom", $nom);
+    //     $sql->execute();
+
+    //     return $sql->fetchAll(PDO::FETCH_ASSOC);
+    // }
+
+    //-- AFFICHER LES PRODUCTS D'UN USER --//
+    function sellerProduct($vendeur) {
+        $db = connexionToDB();
+
+        $sql = $db->prepare("
+            SELECT PRODUCT.*, USER.nom as nomVendeur FROM PRODUCT INNER JOIN USER ON PRODUCT.vendeur = USER.id WHERE PRODUCT.vendeur = :vendeur
+        ");
+        $sql->bindValue(":vendeur", $vendeur);
+        $sql->execute();
+
+        return $sql->fetchAll(PDO::FETCH_ASSOC);
+    }
 ?>

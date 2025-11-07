@@ -6,15 +6,16 @@
         ?>
             <div class="cardProduct">
                 <div class="cardProduct_Img">
-                    <a href=""><img src="<?php echo $value['image'];?>" alt="product image"></a>
+                    <a href="?route=ficheProduct&id=<?php echo $value['id']; ?>&nomProduct=<?php echo $value['nomProduct']; ?>&description=<?php echo $value['description']; ?>&prix=<?php echo $value['prix']; ?>&image=<?php echo $value['image']; ?>">
+                    <img src="<?php echo $value['image'];?>" alt="product image"></a>
                 </div>
                 <div class="cardProduct_Content">
                     <h3><?php echo $value['nomProduct'];?></h3>
                     <div class="cardProduct_text"><p><?php echo $value['description'];?></p></div>
-                    <span><?php echo $value['prix'];?> € TTC</span>
+                    <span class="price"><?php echo $value['prix'];?> € TTC</span>
                     <div class="cardProduct_Button">
-                        <a href=""><button class="btn2">Ajouter au panier</button></a> 
-                        <a href=""><i class="fa-solid fa-circle-plus"></i></a>                     
+                        <a href=""><button class="btn2">Ajouter au panier</button></a>
+                        <a href="?route=ficheProduct&id=<?php echo $value['id']; ?>&nomProduct=<?php echo $value['nomProduct']; ?>&description=<?php echo $value['description']; ?>&prix=<?php echo $value['prix']; ?>&image=<?php echo $value['image']; ?>"><i class="fa-solid fa-circle-plus"></i></a>
                     </div>
                 </div>
             </div>

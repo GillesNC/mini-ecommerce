@@ -43,6 +43,15 @@ require $_SERVER["DOCUMENT_ROOT"].'/mini-ecommerce/view/navbar/header.php';
                 require "./controller/listProduct_controller.php";
                 break;
 
+            case $_GET["route"] === "ficheProduct":
+                require "./controller/ficheProduct_controller.php";
+                break;
+
+            case $_GET["route"] === "seller":
+                require "./controller/seller_controller.php";
+                break;
+
+            //-- 404 ROUTE --//                
             default:
                 echo "Page 404";
                 break;
