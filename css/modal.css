@@ -27,6 +27,14 @@
     border-radius: 25px;
 }
 
+.popup_content h2 {
+    color: #EEA08F;
+}
+
+.popup_content p {
+    color: #222222;
+}
+
 .buttons_popup {
     display: flex;
     flex-direction: row;

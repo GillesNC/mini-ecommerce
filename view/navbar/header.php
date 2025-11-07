@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="/mini-ecommerce/css/modal.css">
     <link rel="stylesheet" href="/mini-ecommerce/css/cardProduct.css">
     <link rel="stylesheet" href="/mini-ecommerce/css/ficheProduct.css">
+    <link rel="stylesheet" href="/mini-ecommerce/css/seller.css">
 
     <title>ECF - Mini Ecommerce</title>
 </head>
@@ -51,7 +52,7 @@
                         echo '<i class="fa-solid fa-chevron-down"></i>';
                         echo '<div class="dropdown_content">';
                         echo '<a href="?route=updateUser">Modifier mon profil</a>';
-                        echo '<a href="?route=addProduct">Ajouter un produit</a>';
+                        echo '<a href="?route=seller">Gérer mes produits</a>';
                         echo '<a href="?route=logout">Déconnexion</a>';
                     } else {
                         echo '<a href="?route=login"><i class="fa-regular fa-user"></i>Mon Compte</a>';

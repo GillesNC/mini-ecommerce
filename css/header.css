@@ -27,7 +27,7 @@ header {
 }
 
 .search_bar {
-    flex: 1;
+    width: 60%;
     margin: 0 20px;
     position: relative;
 }
@@ -62,7 +62,8 @@ header {
 
 .cart_account {
     display: flex;
-    gap: 20px;
+    justify-content: flex-end;
+    gap: 50px;
 }
 
 .cart_account .cart {

@@ -16,7 +16,7 @@
     padding: 50px 0;
     width: 100%;
 }
-
+/* SECTION IMAGE */
 .ficheProduit_Img {
     width: 50%;
     height: 500px;
@@ -33,12 +33,19 @@
     border-radius: 25px;
 }
 
+/* SECTION CONTENT */
 .ficheProduit_Content {
     display: flex;
     flex-direction: column;
     gap: 20px;
     width: 50%;
 }
+
+#quantity {
+    width: 80px;
+    height: 20px;
+    text-align: center;
+}   
 
 .ficheProduit_Content h2 {
     font-size: 32px;
@@ -50,7 +57,8 @@
     color: #222222;
 }
 
-.description {
+/* SECTION DESCRIPTION */
+.description_product {
     display: flex;
     flex-direction: column;
     gap: 15px;

@@ -68,4 +68,41 @@ function addProduct($nom, $description, $price, $image, $vendeur): bool {
 
         return $sql->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    //-- METTRE A JOUR UN PRODUIT --//
+    function updateProductdb($id, $nom, $description, $price, $image, $vendeur) : bool {
+        $db = connexionToDB();
+
+        $sql = $db->prepare("
+            UPDATE PRODUCT SET nomProduct = :nom, description = :description, prix = :price, image = :image WHERE id = :id AND vendeur = :vendeur
+        ");
+
+        $sql->bindValue(":id", $id);
+        $sql->bindValue(":nom", $nom);
+        $sql->bindValue(":description", $description);
+        $sql->bindValue(":price", $price);
+        $sql->bindValue(":image", $image);
+        $sql->bindValue(":vendeur", $vendeur);
+        $sql->execute();
+
+        if ($sql->rowCount() > 0) {
+            return true;
+        } else {
+            return false;
+        }   
+    }
+
+    //-- SUPPRIMER UN PRODUIT --//
+    function deleteProductdb($id, $vendeur) : bool {
+        $db = connexionToDB();
+
+        $sql = $db->prepare("
+            DELETE FROM PRODUCT WHERE id = :id AND vendeur = :vendeur
+        ");
+
+        $sql->bindValue(":id", $id);
+        $sql->bindValue(":vendeur", $vendeur);
+        $sql->execute();    
+        return $sql->rowCount() > 0;
+    }
 ?>

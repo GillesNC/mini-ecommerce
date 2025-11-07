@@ -7,8 +7,12 @@
             <h2><?php echo $_GET['nomProduct'];?></h2>
             <span class="price"><?php echo $_GET['prix'];?> € TTC</span>
             <div class="ficheProduit_Quantity">
-                <label for="quantity">Quantité :</label>
-                <input type="number" min="1" value="1" id="quantity">
+                <label for="Quantity">Quantité :</label>
+                <div class="ficheProduit_Quantity_Button">
+                    <button class="btn_quantity">-</button>
+                    <input type="number" min="1" value="1" id="quantity">
+                    <button class="btn_quantity">+</button>
+                </div>
             </div>
             <div class="ficheProduit_Button">
                 <a href="">
@@ -17,7 +21,7 @@
             </div>
         </div>
     </section>
-    <section class="description">
+    <section class="description_product">
         <div class="description_title">
             <h3>Description</h3>
         </div>
@@ -25,7 +29,14 @@
             <p><?php echo $_GET['description'];?></p>
         </div>
     </section>
-
+    <section class="description_product">
+        <div class="description_title">
+            <h3>Avis des utilisateurs</h3>
+        </div>
+        <div class="description_content">
+            <p></p>
+        </div>
+    </section>
     <section class="contact">
         <div class="contact_content">
             <h2>Comment contacter le site mini-ecommerce</h2>

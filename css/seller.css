@@ -1,0 +1,67 @@
+/****** SELLER STYLE *******/
+.seller_products {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+    justify-content: center;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.seller_products_panel {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border: 1px solid #EEA08F;
+    border-radius: 25px;
+    padding: 20px;
+    height: fit-content;
+    position : sticky;
+    top: 22vh;
+}
+.seller_products_panel h3 {
+    font-size: 20px;
+    color: #0081A7;
+}
+
+.btn_add, .btn_back {
+    width: 100%;
+}
+
+/****** SELLER MY PRODUCT STYLE *******/
+.seller_product_card {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.cardSeller {
+    width: 100%;
+    height: 100%
+}
+
+.cardSeller_Content {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    color: #fff;
+    background-color: #0081A7;
+    border-radius: 25px;
+}
+
+.cardSeller_text_content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    white-space: collapse;
+    text-overflow: ellipsis;
+}
+
+.btn_update {
+    width: 100%;
+    margin-bottom: 10px;
+}
+.btn_delete {
+    width: 100%;
+}
