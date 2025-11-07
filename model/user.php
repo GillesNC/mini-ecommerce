@@ -3,6 +3,7 @@
 require $_SERVER["DOCUMENT_ROOT"].'/mini-ecommerce/model/connexiondb.php';
 
 //-- CRUD USER --//
+//-- INSERTION DES USERS AU NIVEAU DE LA BDD --//
     function createdb($nom, $prenom, $pseudo, $email, $pwd): bool {
         $db = connexionToDB();
 

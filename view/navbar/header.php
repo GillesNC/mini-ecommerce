@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="/mini-ecommerce/css/main.css">
     <link rel="stylesheet" href="/mini-ecommerce/css/profil.css">
     <link rel="stylesheet" href="/mini-ecommerce/css/modal.css">
+    <link rel="stylesheet" href="/mini-ecommerce/css/cardProduct.css">
 
     <title>ECF - Mini Ecommerce</title>
 </head>
@@ -49,6 +50,7 @@
                         echo '<i class="fa-solid fa-chevron-down"></i>';
                         echo '<div class="dropdown_content">';
                         echo '<a href="?route=updateUser">Modifier mon profil</a>';
+                        echo '<a href="?route=addProduct">Ajouter un produit</a>';
                         echo '<a href="?route=logout">Déconnexion</a>';
                     } else {
                         echo '<a href="?route=login"><i class="fa-regular fa-user"></i>Mon Compte</a>';
@@ -64,7 +66,7 @@
         <section class="main_navbar">
             <nav>
                 <ul>
-                    <li><a href="#">Tous nos produits</a></li>
+                    <li><a href="index.php#product">Tous nos produits</a></li>
                     <li><a href="#">Qui sommes nous ?</a></li>
                     <li><a href="#">Contact</a></li>
                 </ul>

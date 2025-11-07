@@ -5,6 +5,7 @@ require $_SERVER["DOCUMENT_ROOT"].'/mini-ecommerce/view/navbar/header.php';
 //-- ROUTE --//
    if (isset($_GET{"route"})) {
         switch (true) {
+            //-- USER ROUTE --//
             case $_GET["route"] === "register":
                 require "./controller/register_controller.php";
                 break;
@@ -31,6 +32,15 @@ require $_SERVER["DOCUMENT_ROOT"].'/mini-ecommerce/view/navbar/header.php';
 
             case $_GET["route"] === "deleteUser":
                 require "./controller/deleteUser_controller.php";
+                break;
+
+            //-- PRODUCT ROUTE --//
+            case $_GET["route"] === "addProduct":
+                require "./controller/addProduct_controller.php";
+                break;
+
+            case $_GET["route"] === "listProduct":
+                require "./controller/listProduct_controller.php";
                 break;
 
             default:

@@ -1,12 +1,11 @@
-<?php
-echo "Welcome to Mini E-commerce";
-?>
-
 <main>
-    <section class="product">
+    <section class="product" id="product">
         <h2>Gros titre pour présenter tous les produits du site mini-ecommerce</h2>
         <div class="product_list">
-
+            <!-- Affichage des produits depuis la BDD -->
+            <?php
+                require $_SERVER["DOCUMENT_ROOT"].'/mini-ecommerce/controller/listProduct_controller.php';
+            ?>
         </div>
     </section>
 

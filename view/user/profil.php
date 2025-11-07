@@ -30,14 +30,15 @@
             <p><strong>Email :</strong> <?php echo $user['email']; ?></p>
             <div class="buttons_profil">
                 <a href="?route=updateUser"><button class="btn1">Modifier son profil</button></a>
-                <a href="#popup"><button class="btn2">Supprimer son profil</button></a>
+                <a href="?route=addProduct"><button class="btn1">Ajouter un produit</button></a>
+                <a href="#popup"><button class="btn3">Supprimer mon profil</button></a>
             </div>
         </div>
         <div class="img_profil">
             <img src="/mini-ecommerce/assets/profil.jpg" alt="Image profil utilisateur">
         </div>
     </div>
- <div class="popup" id="popup">
+    <div class="popup" id="popup">
         <div class="popup_content">
             <div>
                 <h2>Confirmer la suppression</h2>
@@ -49,6 +50,6 @@
                 </form>
                 <a href="#"><button class="btn2">Annuler</button></a>
             </div>
-        </form>
+        </div>
     </div>
 </section>
