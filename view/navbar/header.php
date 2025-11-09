@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="/mini-ecommerce/css/cardProduct.css">
     <link rel="stylesheet" href="/mini-ecommerce/css/ficheProduct.css">
     <link rel="stylesheet" href="/mini-ecommerce/css/seller.css">
+    <link rel="stylesheet" href="/mini-ecommerce/css/cart.css">
 
     <title>ECF - Mini Ecommerce</title>
 </head>

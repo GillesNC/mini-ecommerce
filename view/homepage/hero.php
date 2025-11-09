@@ -4,6 +4,6 @@
     </div>
     <div class="hero_content">
         <h1>Bienvenue sur le meilleur site e-commerce pour la boxe</h1>
-        <a href=""><button class="btn1">Tous nos produits</button></a>
+        <a href="#product"><button class="btn1">Tous nos produits</button></a>
     </div>
 </section>

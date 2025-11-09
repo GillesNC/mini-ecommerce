@@ -17,15 +17,15 @@
     </div>
     <div class="content_profil">
         <h2>Bonjour <?php echo $user['prenom']; ?>, voici votre panier</h2>
-        <?php if(isset($_SESSION['msg'])): ?>
+        <?php if(isset($_SESSION['msg'])) { ?>
             <p class="message"><?php echo $_SESSION['msg']; unset($_SESSION['msg']); ?></p>
-        <?php endif; ?>
+        <?php } ?>
         
-        <?php if(isset($_SESSION['cart']) && !empty($_SESSION['cart'])): ?>
+        <?php if(isset($_SESSION['cart']) && !empty($_SESSION['cart'])) { ?>
             <a href="?route=clearCart">
                 <button class="btn3">Vider le panier</button>
             </a>
-        <?php endif; ?>
+        <?php } ?>
     </div>
 </section>
 
@@ -40,7 +40,7 @@
         $total = 0;
         ?>
         <div class="cart_items">
-            <?php foreach ($_SESSION['cart'] as $id => $product): 
+            <?php foreach ($_SESSION['cart'] as $id => $product) {
                 $quantite = isset($product['quantite']) ? $product['quantite'] : 1;
                 $subtotal = $product['prix'] * $quantite;
                 $total += $subtotal;
@@ -71,7 +71,7 @@
                         </a>
                     </div>
                 </div>
-            <?php endforeach; ?>
+            <?php } ?>
         </div>
         
         <div class="cart_summary">

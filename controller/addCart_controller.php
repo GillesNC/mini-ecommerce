@@ -1,13 +1,18 @@
 <?php
         require $_SERVER["DOCUMENT_ROOT"].'/mini-ecommerce/model/cart_model.php';
 
-        //SI PANIER N'EXISTE PAS, ON CREE UN TABLEAU 
+        //SI PANIER N'EXISTE PAS, ON CREEE UN TABLEAU 
         if (!isset($_SESSION['cart'])) $_SESSION['cart'] = []; 
 
         //VERIFIE PRODUIT EXISTE DANS LE PANIER 
         if ($_GET["route"] === "addCart" && isset($_GET["id"])){
             $id = (INT) $_GET["id"];
-            $quantity = isset($_GET["quantity"]) ? (INT) $_GET["quantity"] : 1;
+            
+            if (isset($_GET["quantity"])) {
+                $quantity = (INT) $_GET["quantity"];
+            } else {
+                $quantity = 1;
+            }
 
             //RECUPRE LES INFOS DU PRODUIT
             $productsCart = findById($id);
