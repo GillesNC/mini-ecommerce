@@ -1,21 +1,38 @@
+<?php
+    $quantity = isset($_GET['qty']) ? (int)$_GET['qty'] : 1;
+    if ($quantity < 1) $quantity = 1;
+    
+    $productId = $_GET['id'];
+    $productName = $_GET['nomProduct'];
+    $productDesc = $_GET['description'];
+    $productPrice = $_GET['prix'];
+    $productImage = $_GET['image'];
+?>
+
 <section class="fiche">
     <section class="ficheProduit">
         <div class="ficheProduit_Img">
-            <img src="<?php echo $_GET['image'];?>" alt="product image">
+            <img src="<?php echo $productImage;?>" alt="product image">
         </div>
         <div class="ficheProduit_Content">
-            <h2><?php echo $_GET['nomProduct'];?></h2>
-            <span class="price"><?php echo $_GET['prix'];?> € TTC</span>
+            <h2><?php echo $productName;?></h2>
+            <span class="price"><?php echo $productPrice;?> € TTC</span>
+            
             <div class="ficheProduit_Quantity">
-                <label for="Quantity">Quantité :</label>
+                <label for="quantity">Quantité :</label>
                 <div class="ficheProduit_Quantity_Button">
-                    <button class="btn_quantity">-</button>
-                    <input type="number" min="1" value="1" id="quantity">
-                    <button class="btn_quantity">+</button>
+                    <a href="?route=ficheProduct&id=<?php echo $productId;?>&nomProduct=<?php echo $productName;?>&description=<?php echo $productDesc;?>&prix=<?php echo $productPrice;?>&image=<?php echo $productImage;?>&qty=<?php echo $quantity - 1;?>">
+                        <button type="button" class="btn_quantity">-</button>
+                    </a>
+                    <input type="number" min="1" value="<?php echo $quantity;?>" id="quantity" readonly>
+                    <a href="?route=ficheProduct&id=<?php echo $productId;?>&nomProduct=<?php echo $productName;?>&description=<?php echo $productDesc;?>&prix=<?php echo $productPrice;?>&image=<?php echo $productImage;?>&qty=<?php echo $quantity + 1;?>">
+                        <button type="button" class="btn_quantity">+</button>
+                    </a>
                 </div>
             </div>
+            
             <div class="ficheProduit_Button">
-                <a href="">
+                <a href="?route=addCart&id=<?php echo $productId;?>&quantity=<?php echo $quantity;?>">
                     <button class="btn2">Ajouter au panier</button>
                 </a>
             </div>
@@ -26,7 +43,7 @@
             <h3>Description</h3>
         </div>
         <div class="description_content">
-            <p><?php echo $_GET['description'];?></p>
+            <p><?php echo $productDesc;?></p>
         </div>
     </section>
     <section class="description_product">

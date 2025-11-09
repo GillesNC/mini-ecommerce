@@ -1,7 +1,6 @@
 /****** CARD STYLE *******/
 .cardProduct {
-    width: 385px;
-    height: 620px;
+    width: 100%;
     border: 1px solid #0081A7;
     border-radius: 25px;
     overflow: hidden;
@@ -14,8 +13,7 @@
 
 .cardProduct_Img {
     width: 100%;
-    height: 100%;
-    background-color: #0081A7;
+    height: 60%;
     border-radius: 25px;
 }
 
@@ -37,9 +35,9 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    height: 50%;
+    height: 40%;
     padding: 20px;
-    gap: 10px;
+
     color: #fff;
     background-color: #0081A7;
     border-radius: 25px;

@@ -14,7 +14,7 @@
                     <!-- <div class="cardProduct_text"><p><?php echo $value['description'];?></p></div> -->
                     <span class="price"><?php echo $value['prix'];?> € TTC</span>
                     <div class="cardProduct_Button">
-                        <a href=""><button class="btn2">Ajouter au panier</button></a>
+                        <a href="?route=addCart&id=<?php echo $value['id']; ?>"><button class="btn2">Ajouter au panier</button></a>
                         <a href="?route=ficheProduct&id=<?php echo $value['id']; ?>&nomProduct=<?php echo $value['nomProduct']; ?>&description=<?php echo $value['description']; ?>&prix=<?php echo $value['prix']; ?>&image=<?php echo $value['image']; ?>"><i class="fa-solid fa-circle-plus"></i></a>
                     </div>
                 </div>

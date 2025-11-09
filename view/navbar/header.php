@@ -37,7 +37,13 @@
             </div>
             <div class="cart_account">
                 <div class="cart">
-                    <a href="#" class="cart"><i class="fa-solid fa-basket-shopping"></i>Mon panier</a>
+                    <a href="?route=cart" class="cart">
+                        <i class="fa-solid fa-basket-shopping"></i>
+                        Mon panier 
+                        <?php if(isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) { ?>
+                            <span class="cart-count">(<?php echo count($_SESSION['cart']); ?>)</span>
+                        <?php } ?>
+                    </a>
                 </div>                
                 <div class="account_dropdown">
                 <!-- CONDITION CONNEXION OU NON -->
@@ -75,5 +81,3 @@
             </nav>
         </section>
     </header>
-
-    

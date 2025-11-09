@@ -59,7 +59,37 @@ require $_SERVER["DOCUMENT_ROOT"].'/mini-ecommerce/view/navbar/header.php';
                 require "./controller/deleteProduct_controller.php";
                 break;
 
-            //-- 404 ROUTE --//                
+            //-- CART ROUTE --//
+            case $_GET["route"] === "addCart":
+                if(isset($_GET["id"])) {
+                    $id = (INT) $_GET["id"];
+                    require "./controller/addCart_controller.php";
+                } else {
+                    header("Location: ?route=listProduct");
+                }
+                break;
+
+            case $_GET["route"] === "cart":
+                require $_SERVER["DOCUMENT_ROOT"].'/mini-ecommerce/view/cart/cart.php';
+                break;
+
+            case $_GET["route"] === "deleteCart":
+                require $_SERVER["DOCUMENT_ROOT"].'/mini-ecommerce/controller/deleteCart_controller.php';
+                break;
+
+            case $_GET["route"] === "increaseQuantity":
+                require $_SERVER["DOCUMENT_ROOT"].'/mini-ecommerce/controller/increaseQuantity_controller.php';
+                break;
+
+            case $_GET["route"] === "decreaseQuantity":
+                require $_SERVER["DOCUMENT_ROOT"].'/mini-ecommerce/controller/decreaseQuantity_controller.php';
+                break;
+
+            case $_GET["route"] === "clearCart":
+                require $_SERVER["DOCUMENT_ROOT"].'/mini-ecommerce/controller/clearCart_controller.php';
+                break;
+
+            //-- 404 ROUTE --//
             default:
                 echo "Page 404";
                 break;
