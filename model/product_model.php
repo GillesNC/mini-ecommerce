@@ -106,21 +106,20 @@ function addProduct($nom, $description, $price, $image, $vendeur): bool {
         return $sql->rowCount() > 0;
     }
 
-    //-- AVIS PRODUIT --//
-    function addReview($productId, $userId, $rating, $comment) : bool {
+    //-- ADD AVIS PRODUIT --//
+    function addReview($productID, $userID, $rating, $review) : bool {
         $db = connexionToDB();
 
         $sql = $db->prepare("
-            INSERT INTO REVIEW (productID, userID, rating, comment) VALUES (:productId, :userId, :rating, :comment)
+            INSERT INTO REVIEW (productID, userID, rating, review) VALUES (:productID, :userID, :rating, :review)
         ");
 
-        $sql->bindValue(":productId", $productId);
-        $sql->bindValue(":userId", $userId);
-        $sql->bindValue(":rating", $rating);
-        $sql->bindValue(":comment", $comment);
+        $sql->bindValue(":productID", $productID, PDO::PARAM_INT);
+        $sql->bindValue(":userID", $userID, PDO::PARAM_INT);
+        $sql->bindValue(":rating", $rating, PDO::PARAM_INT);
+        $sql->bindValue(":review", $review);
         $sql->execute();
 
         return $sql->rowCount() > 0;
     }
-
 ?>

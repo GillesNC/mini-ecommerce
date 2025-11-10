@@ -1,6 +1,6 @@
 <?php
     require $_SERVER["DOCUMENT_ROOT"].'/mini-ecommerce/model/cart_model.php';
-
+    
     $quantity = isset($_GET['qty']) ? (int)$_GET['qty'] : 1;
     if ($quantity < 1) $quantity = 1;
     
@@ -102,12 +102,13 @@
         <div class="description_content">
 
             <!-- AFFICHER TOUS LES REVIEWS -->
-            <!-- <?php
-                foreach ($reviews as $value) {
+            <?php
+                $review = getAllReviewsByProductId($productId);
+                foreach ($review as $key => $value) {
                     echo "posté par: ".$value['pseudo']; 
-                    echo "<p>".$value['content']."</p>"; 
+                    echo "<p>".$value['review']."</p>"; 
                 }
-            ?> -->
+            ?>
 
         <!-- AJOUTE UNE REVIEWS EN FONCTION DES USER CONNECTE DIFF DU VENDEUR -->
             <?php 

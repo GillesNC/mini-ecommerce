@@ -31,12 +31,12 @@
 
         <div class="bloc_form description">
             <label for="review" class="form-label">Votre avis*</label>
-            <textarea name="review" class="form-control" id="review" placeholder="Donnez votre avis ici" rows="5" cols="33"></textarea>
+            <textarea name="review" class="form-control" id="review" placeholder="Donnez votre avis ici" rows="5" cols="33" required></textarea>
         </div>
 
         <div class="bloc_form rating">
             <label for="rating" class="form-label">Note*</label>
-            <input type="number" name="rating" class="form-control" id="rating" min="1" max="5" placeholder="Veuillez saisir une note entre 1 et 5">
+            <input type="number" name="rating" class="form-control" id="rating" min="1" max="5" placeholder="Veuillez saisir une note entre 1 et 5" required>
         </div>
 
             <button type="submit" class="btn1" name="addReview">Ajouter un avis</button>
