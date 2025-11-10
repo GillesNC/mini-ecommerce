@@ -1,5 +1,3 @@
-<link rel="stylesheet" href="/mini-ecommerce/css/register.css">
-
 <section class="form_subscribe">
     <div>
         <h1>Inscription</h1>

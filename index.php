@@ -5,6 +5,7 @@ require $_SERVER["DOCUMENT_ROOT"].'/mini-ecommerce/view/navbar/header.php';
 //-- ROUTE --//
    if (isset($_GET{"route"})) {
         switch (true) {
+            //-- USER ROUTE --//
             case $_GET["route"] === "register":
                 require "./controller/register_controller.php";
                 break;
@@ -13,8 +14,89 @@ require $_SERVER["DOCUMENT_ROOT"].'/mini-ecommerce/view/navbar/header.php';
                 require $_SERVER["DOCUMENT_ROOT"].'/mini-ecommerce/view/user/welcome.php';
                 break;
 
+            case $_GET["route"] === "login":
+                require "./controller/login_controller.php";
+                break;
+
+            case $_GET["route"] === "profil":
+                require $_SERVER["DOCUMENT_ROOT"].'/mini-ecommerce/view/user/profil.php';
+                break;
+
+            case $_GET["route"] === "logout":
+                require "./controller/logout_controller.php";
+                break;
+
+            case $_GET["route"] === "updateUser":
+                require "./controller/updateUser_controller.php";
+                break;
+
+            case $_GET["route"] === "deleteUser":
+                require "./controller/deleteUser_controller.php";
+                break;
+
+            //-- PRODUCT ROUTE --//
+            case $_GET["route"] === "addProduct":
+                require "./controller/addProduct_controller.php";
+                break;
+
+            case $_GET["route"] === "listProduct":
+                require "./controller/listProduct_controller.php";
+                break;
+
+            case $_GET["route"] === "ficheProduct":
+                require "./controller/ficheProduct_controller.php";
+                break;
+
+            case $_GET["route"] === "seller":
+                require "./controller/seller_controller.php";
+                break;
+
+            case $_GET["route"] === "updateProduct":
+                require "./controller/updateProduct_controller.php";
+                break;
+
+            case $_GET["route"] === "deleteProduct":
+                require "./controller/deleteProduct_controller.php";
+                break;
+
+            //-- CART ROUTE --//
+            case $_GET["route"] === "addCart":
+                if(isset($_GET["id"])) {
+                    $id = (INT) $_GET["id"];
+                    require "./controller/addCart_controller.php";
+                } else {
+                    header("Location: ?route=listProduct");
+                }
+                break;
+
+            case $_GET["route"] === "cart":
+                require $_SERVER["DOCUMENT_ROOT"].'/mini-ecommerce/view/cart/cart.php';
+                break;
+
+            case $_GET["route"] === "deleteCart":
+                require $_SERVER["DOCUMENT_ROOT"].'/mini-ecommerce/controller/deleteCart_controller.php';
+                break;
+
+            case $_GET["route"] === "increaseQuantity":
+                require $_SERVER["DOCUMENT_ROOT"].'/mini-ecommerce/controller/increaseQuantity_controller.php';
+                break;
+
+            case $_GET["route"] === "decreaseQuantity":
+                require $_SERVER["DOCUMENT_ROOT"].'/mini-ecommerce/controller/decreaseQuantity_controller.php';
+                break;
+
+            case $_GET["route"] === "clearCart":
+                require $_SERVER["DOCUMENT_ROOT"].'/mini-ecommerce/controller/clearCart_controller.php';
+                break;
+            
+            //-- REVIEW ROUTE --//
+            case $_GET["route"] === "addReview":
+                require "./controller/addReview_controller.php";
+                break;
+
+            //-- 404 ROUTE --//
             default:
-                echo "Page 404";
+                require $_SERVER["DOCUMENT_ROOT"].'/mini-ecommerce/view/404.php';
                 break;
         }
     } else{

@@ -27,7 +27,7 @@ header {
 }
 
 .search_bar {
-    flex: 1;
+    width: 60%;
     margin: 0 20px;
     position: relative;
 }
@@ -39,6 +39,12 @@ header {
     background-color: #E5E5E5;
     border-radius: 100px;
     font-size: 16px;
+}
+
+.search_bar input:focus {
+    outline: none;
+    border-color: #EEA08F;
+    box-shadow: 0 0 5px #EEA08F;
 }
 
 .search_bar button {
@@ -56,7 +62,8 @@ header {
 
 .cart_account {
     display: flex;
-    gap: 20px;
+    justify-content: flex-end;
+    gap: 50px;
 }
 
 .cart_account .cart {
@@ -90,6 +97,10 @@ header {
     border-radius: 100px;
 }
 
+.account_dropdown:hover {
+    background-color: #EEA08F;
+}
+
 .account_dropdown a {
     color: #fff;
     font-size: 16px;
@@ -105,6 +116,7 @@ header {
     right: 5px;
     width: 95%;
     background-color: #0081A7;
+    border: 1px solid #fff;
     box-shadow: 0 2px 4px #0000001a;
     border-radius: 5px;
     overflow: hidden;
@@ -116,7 +128,6 @@ header {
 }
 
 .account_dropdown .dropdown_content a {
-    display: block;
     padding: 10px 15px;
     color: #fff;
     text-decoration: none;
@@ -133,7 +144,6 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 15px 0;
     background-color: #0081A7;
     width: 100%;
 }
@@ -148,9 +158,20 @@ header {
     width: 90%;
 }
 
+.main_navbar li {
+    padding: 15px 15px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
 .main_navbar ul li a {
     color: #fff;
     font-weight: 500;
     font-size: 16px;
     transition: color 0.3s ease;
+    transition: background-color 0.3s ease;
+}
+
+.main_navbar li:hover {
+    background-color: #EEA08F;
 }

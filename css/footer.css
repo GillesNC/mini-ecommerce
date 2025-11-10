@@ -77,6 +77,10 @@ footer {
     color: #222222;
 }
 
+.nav_section ul li a:hover {
+    color: #EEA08F;
+}
+
 
 /****** LEGACY SECTION *******/
 .legacy {
@@ -94,4 +98,31 @@ footer {
     display: flex;
     justify-content: space-between;
     color: #fff;
+}
+
+/****** MOBILE *******/
+@media (max-width: 768px) {
+    .reassurance {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .menu {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .legacy div {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
 }

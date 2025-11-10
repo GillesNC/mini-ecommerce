@@ -1,0 +1,109 @@
+/****** FICHE PRODUCT STYLE *******/
+.fiche {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.ficheProduit {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    padding: 50px 0;
+    width: 100%;
+}
+/* SECTION IMAGE */
+.ficheProduit_Img {
+    width: 50%;
+    height: 500px;
+    border: 2px solid #0081A7;
+    border-radius: 25px;
+    padding: 5px;
+    overflow: hidden;
+}
+
+.ficheProduit_Img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 25px;
+}
+
+/* SECTION CONTENT */
+.ficheProduit_Content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 50%;
+}
+
+.ficheProduit_Quantity_Button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#quantity {
+    width: 15%;
+    height: 25px;
+    text-align: center;
+}
+
+.ficheProduit_Quantity_Button a button {
+    color: #EEA08F;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.ficheProduit_Quantity_Button a button:hover {
+    color: #0081A7;
+}
+
+.ficheProduit_Content h2 {
+    font-size: 32px;
+    color: #0081A7;
+}
+
+.ficheProduit_Content p {
+    font-size: 18px;
+    color: #222222;
+}
+
+.ficheProduit_Content .price {
+    font-size: 35px;
+    font-weight: bold;
+}
+
+/* SECTION DESCRIPTION */
+.description_product {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 100px;
+    width: 100%;
+}
+
+.description_title {
+    background-color: #0081A7;
+    color: #fff;
+    padding: 15px;
+    border-radius: 25px;
+}
+
+.description_content {
+    padding: 20px;
+}
+
+.description p {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.5;
+    text-align: justify;
+}
