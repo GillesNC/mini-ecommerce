@@ -11,7 +11,6 @@
                 </div>
                 <div class="cardProduct_Content">
                     <h3><?php echo $value['nomProduct'];?></h3>
-                    <!-- <div class="cardProduct_text"><p><?php echo $value['description'];?></p></div> -->
                     <span class="price"><?php echo $value['prix'];?> € TTC</span>
                     <div class="cardProduct_Button">
                         <a href="?route=addCart&id=<?php echo $value['id']; ?>"><button class="btn2">Ajouter au panier</button></a>

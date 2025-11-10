@@ -16,11 +16,7 @@
         <h1>Mon Panier</h1>
     </div>
     <div class="content_profil">
-        <h2>Bonjour <?php echo $user['prenom']; ?>, voici votre panier</h2>
-        <?php if(isset($_SESSION['msg'])) { ?>
-            <p class="message"><?php echo $_SESSION['msg']; unset($_SESSION['msg']); ?></p>
-        <?php } ?>
-        
+        <h2>Bonjour <?php echo $user['prenom']; ?>, voici votre panier</h2>       
         <?php if(isset($_SESSION['cart']) && !empty($_SESSION['cart'])) { ?>
             <a href="?route=clearCart">
                 <button class="btn3">Vider le panier</button>
@@ -34,24 +30,25 @@
     if (!isset($_SESSION['cart']) || empty($_SESSION['cart'])) {
         echo "<div class='empty_cart'>";
         echo "<p>Votre panier est vide.</p>";
-        echo "<a href='?route=homepage'><button class='btn1'>Retour à la boutique</button></a>";
+        echo "<img src='https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExanV5OXR6dGlwMmlidWw5M3ozOWU3NGNzbWN2ZnMwem90MHhzOTNudiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Phna8ImVFWEqxPUIfk/giphy.gif' alt='Panier vide'>";
+        echo "<a href='index.php'><button class='btn1'>Retour à la boutique</button></a>";
         echo "</div>";
     } else {
         $total = 0;
         ?>
         <div class="cart_items">
-            <?php foreach ($_SESSION['cart'] as $id => $product) {
-                $quantite = isset($product['quantite']) ? $product['quantite'] : 1;
-                $subtotal = $product['prix'] * $quantite;
+            <?php foreach ($_SESSION['cart'] as $key => $value) {
+                $quantite = isset($value['quantite']) ? $value['quantite'] : 1;
+                $subtotal = $value['prix'] * $quantite;
                 $total += $subtotal;
             ?>
-                <div class="cart_item">
-                    <div class="cart_item_image">
-                        <img src="<?php echo $product['image']; ?>" alt="<?php echo $product['nomProduct']; ?>">
+                <div class="cart_card">
+                    <div class="cart_card_image">
+                        <img src="<?php echo $value['image']; ?>" alt="<?php echo $value['nomProduct']; ?>">
                     </div>
-                    <div class="cart_item_details">
-                        <h3><?php echo $product['nomProduct']; ?></h3>
-                        <p class="price"><?php echo $product['prix']; ?> € TTC</p>
+                    <div class="cart_card_details">
+                        <h3><?php echo $value['nomProduct']; ?></h3>
+                        <p class="price"><?php echo $value['prix']; ?> € TTC</p>
                         
                         <div class="quantity_controls">
                             <a href="?route=decreaseQuantity&id=<?php echo $id; ?>">
@@ -65,7 +62,7 @@
                         
                         <p class="subtotal">Sous-total : <?php echo $subtotal; ?> €</p>
                     </div>
-                    <div class="cart_item_actions">
+                    <div class="cart_card_btn_delete">
                         <a href="?route=deleteCart&id=<?php echo $id; ?>">
                             <button class="btn3">Supprimer</button>
                         </a>
@@ -77,8 +74,10 @@
         <div class="cart_summary">
             <h3>Récapitulatif</h3>
             <p class="total">Total : <strong><?php echo $total; ?> € TTC</strong></p>
-            <a href="#"><button class="btn1">Passer la commande</button></a>
-            <a href="?route=homepage"><button class="btn2">Continuer mes achats</button></a>
+            <div class="cart_summary_btn">
+                <a href="#"><button class="btn1">Passer la commande</button></a>
+                <a href="index.php"><button class="btn2">Continuer mes achats</button></a>
+            </div>
         </div>
     <?php } ?>
 </section>

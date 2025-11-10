@@ -30,9 +30,9 @@
             <div class="nav_section">
                 <h3>Tous nos produits</h3>
                 <ul>
-                    <li><a href="#">Produit A</a></li>
-                    <li><a href="#">Produit B</a></li>
-                    <li><a href="#">Produit C</a></li>
+                    <li><a href="#">Nos meilleurs produits</a></li>
+                    <li><a href="#">Promotions</a></li>
+                    <li><a href="#">Nouveautés</a></li>
                 </ul>
             </div>
             <div class="nav_section">
@@ -45,8 +45,17 @@
             <div class="nav_section">
                 <h3>Mon compte</h3>
                 <ul>
-                    <li><a href="#">S'inscrire</a></li>
-                    <li><a href="#">Mon profil</a></li>
+
+                <?php
+                    if (isset($_SESSION['user'])) {
+                        echo '<li><a href="?route=profil">Mon profil</a></li>';
+                        echo '<li><a href="?route=seller">Gérer mes produits</a></li>';
+                        echo '<li><a href="?route=logout">Déconnexion</a></li>';
+                    } else {
+                        echo '<li><a href="?route=register">S\'inscrire</a></li>';
+                    }
+                ?>
+
                 </ul>
             </div>
         </div>

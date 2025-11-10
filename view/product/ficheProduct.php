@@ -1,4 +1,6 @@
 <?php
+    require $_SERVER["DOCUMENT_ROOT"].'/mini-ecommerce/model/cart_model.php';
+
     $quantity = isset($_GET['qty']) ? (int)$_GET['qty'] : 1;
     if ($quantity < 1) $quantity = 1;
     
@@ -7,6 +9,30 @@
     $productDesc = $_GET['description'];
     $productPrice = $_GET['prix'];
     $productImage = $_GET['image'];
+
+    $productInfo = findById($productId);
+    $isOwner = false;
+    $nameVendeur = "";
+
+    if ($productInfo) {
+        $nameVendeur = $productInfo['nom'] . " " . $productInfo['prenom'];
+        // var_dump($nameVendeur);
+        // die("OK");
+    }
+    
+    switch (true) {
+        case (!isset($_SESSION["user"])):
+            break;
+            
+        case ($productInfo && $_SESSION["user"]["id"] == $productInfo["vendeur"]):
+            $isOwner = true;
+            $user = $_SESSION["user"];
+            break;
+            
+        default:
+            $user = $_SESSION["user"];
+            break;
+    }    
 ?>
 
 <section class="fiche">
@@ -17,6 +43,29 @@
         <div class="ficheProduit_Content">
             <h2><?php echo $productName;?></h2>
             <span class="price"><?php echo $productPrice;?> € TTC</span>
+            
+            <!-- AFFICHE CTA UPDATE PRODUCT OU LE NOM DU VENDEUR -->
+            <?php 
+            switch (true) {
+                case $isOwner:
+                    ?>
+                    <div class="owner_actions">
+                        <p><strong>Vous êtes le vendeur de ce produit</strong></p>
+                        <div class="owner_buttons">
+                            <a href="?route=updateProduct&id=<?php echo $productId;?>&nomProduct=<?php echo $productName;?>&description=<?php echo $productDesc;?>&prix=<?php echo $productPrice;?>&image=<?php echo $productImage;?>">
+                                <button class="btn3">Modifier le produit</button>
+                            </a>
+                        </div>
+                    </div>
+                    <?php
+                    break;
+                    // var_dump($isOwner);
+                    // die("OK");
+                default:
+                    echo "Vendeur : ". $nameVendeur;
+                    break;
+            }
+            ?>
             
             <div class="ficheProduit_Quantity">
                 <label for="quantity">Quantité :</label>
@@ -48,7 +97,7 @@
     </section>
     <section class="description_product">
         <div class="description_title">
-            <h3>Avis des utilisateurs</h3>
+            <h3>Avis clients</h3>
         </div>
         <div class="description_content">
             <p></p>
