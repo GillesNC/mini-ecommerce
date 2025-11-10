@@ -30,7 +30,6 @@
             break;
             
         default:
-            $user = $_SESSION["user"];
             break;
     }    
 ?>
@@ -105,8 +104,8 @@
             <?php
                 $review = getAllReviewsByProductId($productId);
                 foreach ($review as $key => $value) {
-                    echo "posté par: ".$value['pseudo']; 
-                    echo "<p>".$value['review']."</p>"; 
+                    echo "<div class='review'><strong>Posté par : ".$value['pseudo']."</strong>"; 
+                    echo "<p>".$value['review']."</p></div>"; 
                 }
             ?>
 

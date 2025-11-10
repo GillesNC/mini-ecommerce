@@ -96,14 +96,17 @@
     padding: 15px;
     border-radius: 25px;
 }
-
-.description_content {
-    padding: 20px;
-}
-
 .description p {
     font-size: 16px;
     color: #333;
     line-height: 1.5;
     text-align: justify;
+}
+
+/* SECTION REVIEW */
+.review {
+    border: 1px solid #0081A7;
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 15px;
 }
