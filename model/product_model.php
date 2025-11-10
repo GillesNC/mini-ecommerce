@@ -105,4 +105,22 @@ function addProduct($nom, $description, $price, $image, $vendeur): bool {
         $sql->execute();    
         return $sql->rowCount() > 0;
     }
+
+    //-- AVIS PRODUIT --//
+    function addReview($productId, $userId, $rating, $comment) : bool {
+        $db = connexionToDB();
+
+        $sql = $db->prepare("
+            INSERT INTO REVIEW (productID, userID, rating, comment) VALUES (:productId, :userId, :rating, :comment)
+        ");
+
+        $sql->bindValue(":productId", $productId);
+        $sql->bindValue(":userId", $userId);
+        $sql->bindValue(":rating", $rating);
+        $sql->bindValue(":comment", $comment);
+        $sql->execute();
+
+        return $sql->rowCount() > 0;
+    }
+
 ?>

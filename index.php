@@ -88,10 +88,15 @@ require $_SERVER["DOCUMENT_ROOT"].'/mini-ecommerce/view/navbar/header.php';
             case $_GET["route"] === "clearCart":
                 require $_SERVER["DOCUMENT_ROOT"].'/mini-ecommerce/controller/clearCart_controller.php';
                 break;
+            
+            //-- REVIEW ROUTE --//
+            case $_GET["route"] === "addReview":
+                require "./controller/addReview_controller.php";
+                break;
 
             //-- 404 ROUTE --//
             default:
-                echo "Page 404";
+                require $_SERVER["DOCUMENT_ROOT"].'/mini-ecommerce/view/404.php';
                 break;
         }
     } else{

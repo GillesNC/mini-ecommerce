@@ -100,7 +100,32 @@
             <h3>Avis clients</h3>
         </div>
         <div class="description_content">
-            <p></p>
+
+            <!-- AFFICHER TOUS LES REVIEWS -->
+            <!-- <?php
+                foreach ($reviews as $value) {
+                    echo "posté par: ".$value['pseudo']; 
+                    echo "<p>".$value['content']."</p>"; 
+                }
+            ?> -->
+
+        <!-- AJOUTE UNE REVIEWS EN FONCTION DES USER CONNECTE DIFF DU VENDEUR -->
+            <?php 
+                switch (true) {
+                    case (isset($_SESSION["user"]) && !$isOwner):
+                        ?>
+                        <div class="add_review">
+                            <a href="?route=addReview&id=<?php echo $productId;?>&nomProduct=<?php echo $productName;?>">
+                                <button class="btn1">Ajouter un avis</button>
+                            </a>
+                        </div>
+                <?php            
+                    break;
+                    default:
+                        // header("Location: ?route=login");
+                        break;
+                }
+            ?>
         </div>
     </section>
     <section class="contact">
