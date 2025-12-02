@@ -25,7 +25,8 @@
     <link rel="stylesheet" href="/mini-ecommerce/css/cart.css">
 
     <!-- LINK JS -->
-     <script defer src="/js/formInscription.js"></script>
+    <script defer src="./js/formInscription.js"></script>
+    <script defer src="./js/regex.js"></script>
 
     <title>ECF - Mini Ecommerce</title>
 </head>

@@ -6,6 +6,7 @@
         <div class="bloc_form nom">
             <label for="nom" class="form-label">Nom*</label>
             <input type="text" name="nom" class="form-control" id="nom" required placeholder="Votre nom">
+            <div id="nomError"></div>
         </div>
 
         <div class="bloc_form prenom">
