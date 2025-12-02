@@ -5,13 +5,14 @@
     <form class="container_form" method="POST">
         <div class="bloc_form nom">
             <label for="nom" class="form-label">Nom*</label>
-            <input type="text" name="nom" class="form-control" id="nom" required placeholder="Votre nom">
+            <input type="text" name="nom" class="form-control" id="nom" required placeholder="Votre nom" value="">
             <div id="nomError"></div>
         </div>
 
         <div class="bloc_form prenom">
             <label for="prenom" class="form-label">Prénom*</label>
             <input type="text" name="prenom" class="form-control" id="prenom" required placeholder="Votre prénom">
+            <div id="prenomError"></div>
         </div>
 
         <div class="bloc_form pseudo">
@@ -22,13 +23,15 @@
         <div class="bloc_form email">
             <label for="email" class="form-label">Email*</label>
             <input type="email" name="email" class="form-control" id="email" required placeholder="Votre email">
+            <div id="emailError"></div>
         </div>
 
         <div class="bloc_form pwd">
             <label for="pwd" class="form-label">Votre mot de passe*</label>
             <input type="password" name="pwd" class="form-control" id="pwd" required placeholder="Votre mot de passe">
+            <div id="pwdError"></div>
         </div>
 
-        <button type="submit" class="btn1" name="register">S'inscrire</button>
+        <button type="submit" class="btn1" name="register" id="submit">S'inscrire</button>
     </form>
 </section>
