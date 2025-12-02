@@ -7,11 +7,12 @@ function inputCheck() {
     console.log(input);
 
     let errormsg = document.querySelectorAll("#nomError, #prenomError, #pseudoError, #emailError, #pwdError");
+    console.log(errormsg);
+    let border = document.querySelectorAll("#nom, #prenom, #email, #pwd");
 
     for (let i = 0; i < input.length; i++) {
         console.log(input[i]);
-        input[i].addEventListener('keyup', function(e) {
-            e.preventDefault();
+        input[i].addEventListener('keyup', function() {
             let nomValue = nom.value.trim();
             let prenomValue = prenom.value.trim();
             let emailValue = email.value.trim();
@@ -38,27 +39,28 @@ function inputCheck() {
                     pwd.style.border = "1px solid red";
                     break;
 
-                default:
+                default:                   
                     errormsg.forEach(err => {
                         if (err.innerHTML !== "") {
-                            err.innerHTML = "C'estya bon !";
-                            err.style.border = "1px solid green";
+                            err.innerHTML = "C'est bon !";
                         }
                     });
 
-                    // document.querySelector('#nomError').innerHTML = "C'estya bon !";
-                    // document.querySelector('#prenomError').innerHTML = "C'estya bon !";
-                    // nom.style.border = "1px solid green";
-                    // prenom.style.border = "1px solid green";
-                    // email.style.border = "1px solid green";
-                    // pwd.style.border = "1px solid green";
+                    border.forEach(element => {
+                        element.style.border = "1px solid green";
+                    });
                     break;
             };
-        console.log(nomValue);        
     });
     }
 }
 
 window.addEventListener("load", () => {
+    document.getElementById('submit').onclick = function (e) {
+    if (!inputCheck()) {
+        e.preventDefault(); //empêche l'envoi si erreurs
+        return false
+    }
+}
     inputCheck();
 });

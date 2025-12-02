@@ -6,7 +6,7 @@ function isEmail(email) {
 
 //REGEX PWD
 function isMdp(mdp) { 
-    const er = new RegExp("^[A-Za-z0-9]+!$") 
+    const er = new RegExp("^[A-Za-z0-9]$") 
     return er.test(mdp) 
 }
 

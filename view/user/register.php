@@ -30,6 +30,7 @@
             <label for="pwd" class="form-label">Votre mot de passe*</label>
             <input type="password" name="pwd" class="form-control" id="pwd" required placeholder="Votre mot de passe">
             <div id="pwdError"></div>
+            <div></div>
         </div>
 
         <button type="submit" class="btn1" name="register" id="submit">S'inscrire</button>
