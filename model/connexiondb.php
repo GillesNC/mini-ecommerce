@@ -1,7 +1,7 @@
 <?php
     function connexionToDB() {
         $username ="root";
-        $pwd ="";
+        $pwd ="root";
 
         try {
             return new PDO("mysql:host=localhost;dbname=mini_ecommerce", $username, $pwd);
