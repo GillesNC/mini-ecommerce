@@ -2,8 +2,8 @@
     require $_SERVER["DOCUMENT_ROOT"].'/mini-ecommerce/model/product_model.php';
 
     if (isset($_POST{"addProduct"})) {
-    // var_dump($_POST);
-    // die ("dddd");
+    var_dump($_POST);
+    // die ("Récup OK");
         switch (true) {
             case addProduct($_POST["nom"], $_POST["description"], $_POST["price"], $_POST["image"], $_SESSION["user"]["id"]):
                 header("Location: ?route=profil");

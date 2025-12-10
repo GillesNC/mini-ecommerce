@@ -17,18 +17,18 @@ $dao = new ProductDAO($pdo);
 // echo "<br>Nombre de lignes insérées : " . $nb . "<br>";
 
 //Test MAJ Produit
-// echo "<hr>UPDATE<hr>";
-// $u = new Products(3, "Gant de Boxe", "Acie adpetitus iamque serpens saxo colligi dentium serpens cognitis colligi serpens colligi opperiens extremas cognitis telo adpetitus suae et armatos iussit opperiens ratione iamque ut omnes adpetitus omnes adeste adeste.", "30.00", "assets/gant-boxe-2.png", 5);
-// $affected = $dao->update($u);
-// echo "<br/>";
-// var_dump($affected);
-// echo "<br/>";
-// echo "<pre>";
-// var_dump($u);
-// echo "</pre>";
-// echo "<br/>";
-// die("OK");
-// echo "<br>$affected Produit modifié";
+echo "<hr>UPDATE<hr>";
+$u = new Products(3, "Gant de Boxe", "Acie adpetitus iamque serpens saxo colligi dentium serpens cognitis colligi serpens colligi opperiens extremas cognitis telo adpetitus suae et armatos iussit opperiens ratione iamque ut omnes adpetitus omnes adeste adeste.", "30.00", "assets/gant-boxe-2.png", 5);
+$affected = $dao->update($u);
+echo "<br/>";
+var_dump($affected);
+echo "<br/>";
+echo "<pre>";
+var_dump($u);
+echo "</pre>";
+echo "<br/>";
+die("OK");
+echo "<br>$affected Produit modifié";
 
 //Test DELETE Produit par ID
 // echo "<hr>DELETEBYID<hr>";

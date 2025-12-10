@@ -1,14 +1,14 @@
 <?php
-    switch (true) {
-        case (isset($_SESSION["user"])):
-            $user = $_SESSION["user"];     
-            break;
+switch (true) {
+    case (isset($_SESSION["user"])):
+        $user = $_SESSION["user"];
+        break;
 
-        default:
-            echo "Vous n'êtes pas connecté !";
-            header("Location: ?route=login");
-            break;
-    }
+    default:
+        echo "Vous n'êtes pas connecté !";
+        header("Location: ?route=login");
+        break;
+}
 ?>
 
 <section class="profil">
@@ -16,14 +16,14 @@
         <h1>Gestion des produits</h1>
     </div>
     <div class="content_profil">
-        <h2><?php echo $user['prenom']. ", vous allez modifier un produit"; ?></h2>
+        <h2><?php echo $user['prenom'] . ", vous allez modifier un produit"; ?></h2>
     </div>
 </section>
 
 <section class="update_user form_subscribe">
     <form class="container_form" method="POST">
         <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>">
-        
+
         <div class="bloc_form nom">
             <label for="nom" class="form-label">Nom du produit</label>
             <input type="text" name="nom" class="form-control" id="nom" placeholder="Veuillez saisir le nom du produit" value="<?php echo $_GET['nomProduct']; ?>">
@@ -43,6 +43,6 @@
             <label for="image" class="form-label">Image du produit (URL)</label>
             <input type="text" name="image" class="form-control" id="image" placeholder="Veuillez saisir l'URL de l'image du produit" value="<?php echo $_GET['image']; ?>">
         </div>
-            <button type="submit" class="btn1" name="updateProduct">Je modifie mon produit</button>
+        <button type="submit" class="btn1" name="updateProduct">Je modifie mon produit</button>
     </form>
 </section>

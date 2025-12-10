@@ -31,7 +31,7 @@ class ProductDAO
     }
 
     //Méthode d'insertion d'un produit
-    public function Insert(Products $product): int
+    public function insert(Products $product): int
     {
         $sql = "INSERT INTO product (nomProduct, description, prix, image, vendeur) VALUES (?, ?, ?, ?, ?)";
         $nbLignesAffectees = 0;

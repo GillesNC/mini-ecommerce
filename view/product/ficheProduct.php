@@ -1,86 +1,85 @@
 <?php
-    require $_SERVER["DOCUMENT_ROOT"].'/mini-ecommerce/model/cart_model.php';
-    
-    $quantity = isset($_GET['qty']) ? (int)$_GET['qty'] : 1;
-    if ($quantity < 1) $quantity = 1;
-    
-    $productId = $_GET['id'];
-    $productName = $_GET['nomProduct'];
-    $productDesc = $_GET['description'];
-    $productPrice = $_GET['prix'];
-    $productImage = $_GET['image'];
+require $_SERVER["DOCUMENT_ROOT"] . '/mini-ecommerce/model/cart_model.php';
+$quantity = isset($_GET['qty']) ? (int)$_GET['qty'] : 1; // si qty existe dans l'URL on le prend sinon on ajoute 1 produit par défaut
+if ($quantity < 1) $quantity = 1; // on empêche la quantité d'être inférieure à 1
 
-    $productInfo = findById($productId);
-    $isOwner = false;
-    $nameVendeur = "";
+$productId = $_GET['id'];
+$productName = $_GET['nomProduct'];
+$productDesc = $_GET['description'];
+$productPrice = $_GET['prix'];
+$productImage = $_GET['image'];
 
-    if ($productInfo) {
-        $nameVendeur = $productInfo['nom'] . " " . $productInfo['prenom'];
-        // var_dump($nameVendeur);
-        // die("OK");
-    }
-    
-    switch (true) {
-        case (!isset($_SESSION["user"])):
-            break;
-            
-        case ($productInfo && $_SESSION["user"]["id"] == $productInfo["vendeur"]):
-            $isOwner = true;
-            $user = $_SESSION["user"];
-            break;
-            
-        default:
-            break;
-    }    
+$productInfo = findById($productId);
+$isOwner = false;
+$nameVendeur = "";
+
+if ($productInfo) {
+    $nameVendeur = $productInfo['nom'] . " " . $productInfo['prenom'];
+    // var_dump($nameVendeur);
+    // die("OK");
+}
+
+switch (true) {
+    case (!isset($_SESSION["user"])):
+        break;
+
+    case ($productInfo && $_SESSION["user"]["id"] == $productInfo["vendeur"]):
+        $isOwner = true;
+        $user = $_SESSION["user"];
+        break;
+
+    default:
+        break;
+}
 ?>
 
 <section class="fiche">
     <section class="ficheProduit">
         <div class="ficheProduit_Img">
-            <img src="<?php echo $productImage;?>" alt="product image">
+            <img src="<?php echo $productImage; ?>" alt="product image">
         </div>
         <div class="ficheProduit_Content">
-            <h2><?php echo $productName;?></h2>
-            <span class="price"><?php echo $productPrice;?> € TTC</span>
-            
+            <h2><?php echo $productName; ?></h2>
+            <span class="price"><?php echo $productPrice; ?> € TTC</span>
+
             <!-- AFFICHE CTA UPDATE PRODUCT OU LE NOM DU VENDEUR -->
-            <?php 
+            <?php
             switch (true) {
                 case $isOwner:
-                    ?>
+            ?>
                     <div class="owner_actions">
                         <p><strong>Vous êtes le vendeur de ce produit</strong></p>
                         <div class="owner_buttons">
-                            <a href="?route=updateProduct&id=<?php echo $productId;?>&nomProduct=<?php echo $productName;?>&description=<?php echo $productDesc;?>&prix=<?php echo $productPrice;?>&image=<?php echo $productImage;?>">
+                            <a href="?route=updateProduct&id=<?php echo $productId; ?>&nomProduct=<?php echo $productName; ?>&description=<?php echo $productDesc; ?>&prix=<?php echo $productPrice; ?>&image=<?php echo $productImage; ?>">
                                 <button class="btn3">Modifier le produit</button>
                             </a>
                         </div>
                     </div>
-                    <?php
+            <?php
                     break;
-                    // var_dump($isOwner);
-                    // die("OK");
+                // var_dump($isOwner);
+                // die("OK");
                 default:
-                    echo "Vendeur : ". $nameVendeur;
+                    echo "Vendeur : " . $nameVendeur;
                     break;
             }
             ?>
-            
+
             <div class="ficheProduit_Quantity">
                 <label for="quantity">Quantité :</label>
                 <div class="ficheProduit_Quantity_Button">
-                    <a href="?route=ficheProduct&id=<?php echo $productId;?>&nomProduct=<?php echo $productName;?>&description=<?php echo $productDesc;?>&prix=<?php echo $productPrice;?>&image=<?php echo $productImage;?>&qty=<?php echo $quantity - 1;?>">
+                    <a href="?route=ficheProduct&id=<?php echo $productId; ?>&nomProduct=<?php echo $productName; ?>&description=<?php echo $productDesc; ?>&prix=<?php echo $productPrice; ?>&image=<?php echo $productImage; ?>&qty=<?php echo $quantity - 1; ?>">
                         <button type="button" class="btn_quantity">-</button>
                     </a>
-                    <input type="number" min="1" value="<?php echo $quantity;?>" id="quantity" readonly>
-                    <a href="?route=ficheProduct&id=<?php echo $productId;?>&nomProduct=<?php echo $productName;?>&description=<?php echo $productDesc;?>&prix=<?php echo $productPrice;?>&image=<?php echo $productImage;?>&qty=<?php echo $quantity + 1;?>">
+                    <input type="number" min="1" value="<?php echo $quantity; ?>" id="quantity" readonly>
+                    <a href="?route=ficheProduct&id=<?php echo $productId; ?>&nomProduct=<?php echo $productName; ?>&description=<?php echo $productDesc; ?>&prix=<?php echo $productPrice; ?>&image=<?php echo $productImage; ?>&qty=<?php echo $quantity + 1; ?>">
                         <button type="button" class="btn_quantity">+</button>
                     </a>
                 </div>
             </div>
-            
+
             <div class="ficheProduit_Button">
-                <a href="?route=addCart&id=<?php echo $productId;?>&quantity=<?php echo $quantity;?>">
+                <a href="?route=addCart&id=<?php echo $productId; ?>&quantity=<?php echo $quantity; ?>">
                     <button class="btn2">Ajouter au panier</button>
                 </a>
             </div>
@@ -91,7 +90,7 @@
             <h3>Description</h3>
         </div>
         <div class="description_content">
-            <p><?php echo $productDesc;?></p>
+            <p><?php echo $productDesc; ?></p>
         </div>
     </section>
     <section class="description_product">
@@ -102,29 +101,29 @@
 
             <!-- AFFICHER TOUS LES REVIEWS -->
             <?php
-                $review = getAllReviewsByProductId($productId);
-                foreach ($review as $key => $value) {
-                    echo "<div class='review'><strong>Posté par : ".$value['pseudo']."</strong>"; 
-                    echo "<p>".$value['review']."</p></div>"; 
-                }
+            $review = getAllReviewsByProductId($productId);
+            foreach ($review as $key => $value) {
+                echo "<div class='review'><strong>Posté par : " . $value['pseudo'] . "</strong>";
+                echo "<p>" . $value['review'] . "</p></div>";
+            }
             ?>
 
-        <!-- AJOUTE UNE REVIEWS EN FONCTION DES USER CONNECTE DIFF DU VENDEUR -->
-            <?php 
-                switch (true) {
-                    case (isset($_SESSION["user"]) && !$isOwner):
-                        ?>
-                        <div class="add_review">
-                            <a href="?route=addReview&id=<?php echo $productId;?>&nomProduct=<?php echo $productName;?>">
-                                <button class="btn1">Ajouter un avis</button>
-                            </a>
-                        </div>
-                <?php            
+            <!-- AJOUTE UNE REVIEWS EN FONCTION DES USER CONNECTE DIFF DU VENDEUR -->
+            <?php
+            switch (true) {
+                case (isset($_SESSION["user"]) && !$isOwner):
+            ?>
+                    <div class="add_review">
+                        <a href="?route=addReview&id=<?php echo $productId; ?>&nomProduct=<?php echo $productName; ?>">
+                            <button class="btn1">Ajouter un avis</button>
+                        </a>
+                    </div>
+            <?php
                     break;
-                    default:
-                        // header("Location: ?route=login");
-                        break;
-                }
+                default:
+                    // header("Location: ?route=login");
+                    break;
+            }
             ?>
         </div>
     </section>

@@ -41,6 +41,9 @@
             <input type="text" name="image" class="form-control" id="image" placeholder="Veuillez saisir l'URL de l'image du produit">
         </div>
 
+        <div class="bloc_form vendeur">
+            <input type="hidden" name="vendeur" value="<?php echo $user['id'];?>">
+        </div>
             <button type="submit" class="btn1" name="addProduct">Ajouter un nouveau produit</button>
     </form>
 </section>

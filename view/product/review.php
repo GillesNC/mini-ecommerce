@@ -1,14 +1,14 @@
 <?php
-    switch (true) {
-        case (isset($_SESSION["user"])):
-            $user = $_SESSION["user"];     
-            break;
+switch (true) {
+    case (isset($_SESSION["user"])):
+        $user = $_SESSION["user"];
+        break;
 
-        default:
-            echo "Vous n'êtes pas connecté !";
-            header("Location: ?route=login");
-            break;
-    }
+    default:
+        echo "Vous n'êtes pas connecté !";
+        header("Location: ?route=login");
+        break;
+}
 ?>
 
 <section class="profil">
@@ -16,7 +16,7 @@
         <h1>Ajouter un avis pour : <?php echo $_GET['nomProduct']; ?></h1>
     </div>
     <div class="content_profil">
-        <h2>Salut <?php echo $user['prenom']. ", souhaitez-vous ajouter un avis pour ce produit"; ?></h2>
+        <h2>Salut <?php echo $user['prenom'] . ", souhaitez-vous ajouter un avis pour ce produit"; ?></h2>
     </div>
 </section>
 
@@ -39,6 +39,6 @@
             <input type="number" name="rating" class="form-control" id="rating" min="1" max="5" placeholder="Veuillez saisir une note entre 1 et 5" required>
         </div>
 
-            <button type="submit" class="btn1" name="addReview">Ajouter un avis</button>
+        <button type="submit" class="btn1" name="addReview">Ajouter un avis</button>
     </form>
 </section>
