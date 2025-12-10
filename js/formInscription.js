@@ -108,21 +108,19 @@ function isValid() {
   if (!pseudo || pseudo.length < 3) return false;
   if (!email || !isEmail(email)) return false;
   if (!pwd || !isMdp(pwd)) return false;
-
+  if (!pseudo || pseudo.length < 3) return false;
   return true;
 }
 
 //fonction pour envoyer le formulaire si tout est ok
 function sendForm() {
-  let submit = document.querySelector("#submit");
-  submit.addEventListener("click", function (e) {
-    e.preventDefault();
-    
-    if (isValid()) {
-      // Si tous les champs sont valides, on envoie le formulaire
-      document.querySelector("form").submit();
-    } else {
+  let form = document.querySelector("form");
+  form.addEventListener("submit", function (e) {
+    if (!isValid()) {
+      e.preventDefault();
       alert("Veuillez remplir correctement tous les champs du formulaire");
+    } else {
+      console.log("Inscription réussie, envoi du formulaire");
     }
   });
 }

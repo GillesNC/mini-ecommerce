@@ -1,8 +1,4 @@
 <?php
-// Classe Users - Représente un utilisateur dans le mini e-commerce
-// Cette classe encapsule les informations de base d'un utilisateur et fournit des méthodes d'accès (getters) et de modification (setters) pour chaque propriété
-
-// Déclaration de la classe Users
 class Users {
     // Propriété privée : identifiant unique de l'utilisateur (type entier)
     // Private empêche l'accès direct depuis l'extérieur de la classe

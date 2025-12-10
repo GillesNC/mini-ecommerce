@@ -1,7 +1,6 @@
 <?php
 class Products
 {
-
     private int $id;
     private string $nomProduct;
     private string $description;
@@ -10,6 +9,7 @@ class Products
     private int $vendeur;
 
     public function __construct(int $id = 0, string $nomProduct = "", string $description = "", float $prix = 0.0, string $image = "", int $vendeur = 0)
+    
     {
         $this->id = $id;
         $this->nomProduct = $nomProduct;
