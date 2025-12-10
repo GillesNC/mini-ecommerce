@@ -11,18 +11,19 @@
 
         <div class="bloc_form prenom">
             <label for="prenom" class="form-label">Prénom*</label>
-            <input type="text" name="prenom" class="form-control" id="prenom" required placeholder="Votre prénom">
+            <input type="text" name="prenom" class="form-control" id="prenom" required placeholder="Votre prénom" value="">
             <div id="prenomError"></div>
         </div>
 
         <div class="bloc_form pseudo">
             <label for="pseudo" class="form-label">Pseudo*</label>
-            <input type="text" name="pseudo" class="form-control" id="pseudo" required placeholder="Votre pseudo">
+            <input type="text" name="pseudo" class="form-control" id="pseudo" required placeholder="Votre pseudo" value="">
+            <div id="pseudoError"></div>
         </div>
 
         <div class="bloc_form email">
             <label for="email" class="form-label">Email*</label>
-            <input type="email" name="email" class="form-control" id="email" required placeholder="Votre email">
+            <input type="email" name="email" class="form-control" id="email" required placeholder="Votre email" value="">
             <div id="emailError"></div>
         </div>
 
@@ -30,7 +31,10 @@
             <label for="pwd" class="form-label">Votre mot de passe*</label>
             <input type="password" name="pwd" class="form-control" id="pwd" required placeholder="Votre mot de passe">
             <div id="pwdError"></div>
-            <div></div>
+            <div>
+                <input type="checkbox" name="displayPwd" id="displayPwd">
+                <label for="displayPwd">Afficher le mot de passe</label>
+            </div>
         </div>
 
         <button type="submit" class="btn1" name="register" id="submit">S'inscrire</button>
