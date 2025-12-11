@@ -18,14 +18,16 @@ class ProductDAO
         $sql = "SELECT * FROM product ORDER BY nomProduct";
         try {
             $cursor = $this->pdo->query($sql);
-            $t = $cursor->fetchAll(PDO::FETCH_ASSOC);
+            $t = $cursor->fetchAll(PDO::FETCH_ASSOC); 
             for ($i = 0; $i < count($t); $i++) {
                 $line = $t[$i];
                 $p = new Products($line["id"], $line["nomProduct"], $line["description"], $line["prix"], $line["image"], $line["vendeur"]);
                 $array[] = $p;
             }
-        } catch (Exception $e) {
-            echo $e->getMessage();
+        } catch (PDOException $e) {
+            // echo $e->getMessage();
+            $p = new Products(-1, $e->getMessage()); //Dasn l'exception, Mettre une affectation de quelque choses
+            $array[] = $p;
         }
         return $array;
     }
@@ -45,7 +47,7 @@ class ProductDAO
             $cursor->execute();
             $nbLignesAffectees = $cursor->rowCount();
         } catch (Exception $e) {
-            echo $e->getMessage();
+            $nbLignesAffectees = -1;
         }
         return $nbLignesAffectees;
     }
@@ -67,7 +69,7 @@ class ProductDAO
             $stmt->execute();
 
             $affected = $stmt->rowCount();
-        } catch (Exception $e) {
+        } catch (PDOException $e) {
             echo $e->getMessage();
             $affected = -1;
         }
@@ -75,7 +77,7 @@ class ProductDAO
     }
 
     //Méthode de DELETE d'un produit via ID
-    public function deletebyID(Products $product): int {
+    public function deleteById(Products $product): int {
         $affected = 0;
         $sql = "DELETE FROM product WHERE id = ?";
 
@@ -83,7 +85,7 @@ class ProductDAO
             $stmt = $this->pdo->prepare($sql);
             $stmt->bindValue(1, $product->getId());
             $stmt->execute();
-        } catch(Exception $e) {
+        } catch(PDOException $e) {
             echo $e->getMessage();
             $affected = -1;            
         }
@@ -91,7 +93,7 @@ class ProductDAO
     }
 
     //Méthode de SELECTONE d'un produit via ID
-    public function selectOnebyID(Products $product): Products {
+    public function selectOneByID(Products $product): Products {
 
         $p = new Products();
         $sql = "SELECT * FROM product WHERE id = ?";
@@ -108,7 +110,7 @@ class ProductDAO
                 $p->setID($line["id"]);
                 $p->setNomProduct($line["nomProduct"]);
             }
-        } catch (Exception $e) {
+        } catch (PDOException $e) {
             echo $e->getMessage();
                 $p->setId(-1);
                 $p->setNomProduct($e->getMessage());

@@ -142,7 +142,7 @@ function deleteProductdb()
     $dP =  new Products($id);
     // var_dump($dP);
     // die("OK");
-    $deleteTab = $dao->deletebyID($dP);
+    $deleteTab = $dao->deleteById($dP);
 
     if ($deleteTab > 0) {
         return true;

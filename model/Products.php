@@ -9,7 +9,6 @@ class Products
     private int $vendeur;
 
     public function __construct(int $id = 0, string $nomProduct = "", string $description = "", float $prix = 0.0, string $image = "", int $vendeur = 0)
-    
     {
         $this->id = $id;
         $this->nomProduct = $nomProduct;
@@ -51,7 +50,7 @@ class Products
     }
 
     //Méthode SETTER
-    public function setId(int $id): void
+    public function setId(int $id): void //C'est une prcédure et non pas de return
     {
         $this->id = $id;
     }
