@@ -12,7 +12,10 @@
             <label for="pwd" class="form-label">Votre mot de passe*</label>
             <input type="password" name="pwd" class="form-control" id="pwd" required placeholder="Votre mot de passe">
         </div>
-
+        <div>
+            <input type="checkbox" name="displayPwd" id="displayPwd">
+            <label for="displayPwd">Afficher le mot de passe</label>
+        </div>
         <button type="submit" class="btn1" name="login">Se connecter</button>
     </form>
 </section>

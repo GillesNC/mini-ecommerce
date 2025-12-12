@@ -1,4 +1,4 @@
-<main>
+<main id="main">
     <section class="product" id="product">
         <h2>Gros titre pour présenter tous les produits du site mini-ecommerce</h2>
         <div class="product_list">

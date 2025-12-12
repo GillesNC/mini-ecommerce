@@ -16,10 +16,12 @@ class Users {
     // Propriété privée : adresse email unique dans le système (type chaîne de caractères)
     private string $email;
 
+    private string $pwd;
+
     // Constructeur : méthode spéciale appelée lors de la création d'un nouvel objet Users
     // Elle initialise toutes les propriétés avec les valeurs passées en paramètres
     // Paramètres typés : int pour $id, string pour les autres
-    public function __construct(int $id, string $nom, string $prenom, string $pseudo, string $email)
+    public function __construct(int $id = 0, string $nom = "", string $prenom = "", string $pseudo = "", string $email = "", string $pwd = "")
     {
         // $this fait référence à l'objet en cours de création
         // On assigne la valeur du paramètre $id à la propriété $id de l'objet
@@ -32,6 +34,8 @@ class Users {
         $this->pseudo = $pseudo;
         // On assigne la valeur du paramètre $email à la propriété $email de l'objet
         $this->email = $email;
+
+        $this->pwd = $pwd;
     }
 
     // Getter : méthode publique pour récupérer l'identifiant
@@ -74,6 +78,12 @@ class Users {
         return $this->email;
     }
 
+    public function getPwd(): string
+    {
+        // Retourne la valeur de la propriété privée $email
+        return $this->pwd;
+    }
+
     // Setter : méthode publique pour modifier l'identifiant
     // Paramètre : $id de type entier
     // Ne retourne rien (: void)
@@ -88,7 +98,6 @@ class Users {
     // Ne retourne rien (: void)
     public function setNom(string $nom): void
     {
-        // Modifie la propriété privée $nom avec la nouvelle valeur passée en paramètre
         $this->nom = $nom;
     }
 
@@ -117,6 +126,12 @@ class Users {
     {
         // Modifie la propriété privée $email avec la nouvelle valeur passée en paramètre
         $this->email = $email;
+    }
+
+    public function setPwd(string $pwd): void
+    {
+        // Modifie la propriété privée $email avec la nouvelle valeur passée en paramètre
+        $this->pwd = $pwd;
     }
 }
 // Fin du fichier PHP

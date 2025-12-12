@@ -39,6 +39,7 @@ function addProduct()
     // var_dump($insertTab);
     // die("OK");
 
+    //Je vérifie si l'insertion a réussi ou pas et si oui je retourne true sinon false
     if ($insertTab > 0) {
         return true;
     } else {

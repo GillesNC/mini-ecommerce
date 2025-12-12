@@ -7,7 +7,7 @@
         <div class="reassurance_item">
             <i class="fa-solid fa-industry"></i>
             <p>Produit 100% français</p>
-        </div>        
+        </div>
         <div class="reassurance_item">
             <i class="fa-solid fa-credit-card"></i>
             <p>Paiement sécurisé</p>
@@ -21,7 +21,7 @@
         <div class="logo_footer">
             <a href="index.php"><img src="assets/logo.svg" alt="Logo Mini Ecommerce"></a>
             <div class="social_media">
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>                
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
                 <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
                 <a href="#"><i class="fa-brands fa-youtube"></i></a>
             </div>
@@ -46,7 +46,7 @@
                 <h3>Mon compte</h3>
                 <ul>
 
-                <?php
+                    <?php
                     if (isset($_SESSION['user'])) {
                         echo '<li><a href="?route=profil">Mon profil</a></li>';
                         echo '<li><a href="?route=seller">Gérer mes produits</a></li>';
@@ -54,7 +54,7 @@
                     } else {
                         echo '<li><a href="?route=register">S\'inscrire</a></li>';
                     }
-                ?>
+                    ?>
 
                 </ul>
             </div>
@@ -63,9 +63,11 @@
     <section class="legacy">
         <div>
             <p>©mini-ecommerce2025 | CGV | Mentions légales</p>
-            <p>18-19 Place des Reflets Tour Aurore 92400 Paris La Défense</p>    
+            <p>18-19 Place des Reflets Tour Aurore 92400 Paris La Défense</p>
         </div>
     </section>
 </footer>
+<script defer src="./js/rgaa.js"></script>
 </body>
+
 </html>

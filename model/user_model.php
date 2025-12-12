@@ -54,9 +54,9 @@ require $_SERVER["DOCUMENT_ROOT"].'/mini-ecommerce/model/connexiondb.php';
         $sql->bindValue(":email", $email); 
         $sql->execute();
 
-        $req = $sql->fetch();
+        $req = $sql->fetch();// Récupère la ligne correspondante à l'email
         
-        if (password_verify($pwd, $req["pwd"])) {
+        if (password_verify($pwd, $req["pwd"])) { // Vérifie que le mot de passe correspond à celui stocké en base de données
             $_SESSION['user']= $req;               
             return true;
         } else {

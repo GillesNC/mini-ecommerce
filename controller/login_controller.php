@@ -1,5 +1,5 @@
 <?php
-    require $_SERVER["DOCUMENT_ROOT"].'/mini-ecommerce/model/user.php';
+    require $_SERVER["DOCUMENT_ROOT"].'/mini-ecommerce/model/user_model.php';
 
     if (isset($_POST["login"])) {
     // var_dump($_POST);
